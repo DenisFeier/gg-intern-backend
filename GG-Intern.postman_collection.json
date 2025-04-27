@@ -1,0 +1,424 @@
+{
+	"info": {
+		"_postman_id": "b90b83a4-b138-49de-a67f-4164ed596b8b",
+		"name": "GG-Intern",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "30022351"
+	},
+	"item": [
+		{
+			"name": "Register",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"username\": \"jmecher_de_cartier3\",\n    \"password\": \"1234567890\",\n    \"email\": \"jmecher_de_cartier3@mailinator.com\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/api/user/register",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"user",
+						"register"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Login",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"password\": \"1234567890\",\n    \"email\": \"test1@mailinator.com\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/api/user/login",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"user",
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Meeee",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwidXNlcm5hbWUiOiJQTE0iLCJlbWFpbCI6InRlc3QxQG1haWxpbmF0b3IuY29tIiwiaWF0IjoxNzQ1NzYwNTE0LCJleHAiOjE3NDU4MDM3MTR9.qDh_OVeXvcYN8DDqB0jLDwxaNQaR1TaVBlTWwKdlcS4",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/api/user/me",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"user",
+						"me"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get public users",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwidXNlcm5hbWUiOiJQTE0iLCJlbWFpbCI6InRlc3QxQG1haWxpbmF0b3IuY29tIiwiaWF0IjoxNzQ1NzYwNTE0LCJleHAiOjE3NDU4MDM3MTR9.qDh_OVeXvcYN8DDqB0jLDwxaNQaR1TaVBlTWwKdlcS4",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/api/user/public-users?page=1&limit=3&search=jmecher_de_cartier",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"user",
+						"public-users"
+					],
+					"query": [
+						{
+							"key": "page",
+							"value": "1"
+						},
+						{
+							"key": "limit",
+							"value": "3"
+						},
+						{
+							"key": "search",
+							"value": "jmecher_de_cartier"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Update profile pick",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwidXNlcm5hbWUiOiJQTE0iLCJlbWFpbCI6InRlc3QxQG1haWxpbmF0b3IuY29tIiwiaWF0IjoxNzQ1NzYwNTE0LCJleHAiOjE3NDU4MDM3MTR9.qDh_OVeXvcYN8DDqB0jLDwxaNQaR1TaVBlTWwKdlcS4",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "image",
+							"type": "file",
+							"src": "/Users/denisfeier/Desktop/134996379_da7ed7b0-5f66-4f97-a610-51100d3b9fd2.jpg"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:3000/api/user/profile-picture",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"user",
+						"profile-picture"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Update profile visibility",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwidXNlcm5hbWUiOiJQTE0iLCJlbWFpbCI6InRlc3QxQG1haWxpbmF0b3IuY29tIiwiaWF0IjoxNzQ1NzYwNTE0LCJleHAiOjE3NDU4MDM3MTR9.qDh_OVeXvcYN8DDqB0jLDwxaNQaR1TaVBlTWwKdlcS4",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"isPublic\": true\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/api/user/toggle-visibility",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"user",
+						"toggle-visibility"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create posts",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwidXNlcm5hbWUiOiJQTE0iLCJlbWFpbCI6InRlc3QxQG1haWxpbmF0b3IuY29tIiwiaWF0IjoxNzQ1NzYwNTE0LCJleHAiOjE3NDU4MDM3MTR9.qDh_OVeXvcYN8DDqB0jLDwxaNQaR1TaVBlTWwKdlcS4",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "image",
+							"type": "file",
+							"src": "/Users/denisfeier/Desktop/los-angeles-usa-june-29-unidentified-random-people-in-the-streets-of-downtown-of-los-angeles-ca-on-june-29-2018-P6YB2N.jpg"
+						},
+						{
+							"key": "title",
+							"value": "I want cookies",
+							"type": "text"
+						},
+						{
+							"key": "locationLat",
+							"value": "3213.123131",
+							"type": "text"
+						},
+						{
+							"key": "locationLong",
+							"value": "45.54",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:3000/api/post",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"post"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Update posts",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwidXNlcm5hbWUiOiJQTE0iLCJlbWFpbCI6InRlc3QxQG1haWxpbmF0b3IuY29tIiwiaWF0IjoxNzQ1NzYwNTE0LCJleHAiOjE3NDU4MDM3MTR9.qDh_OVeXvcYN8DDqB0jLDwxaNQaR1TaVBlTWwKdlcS4",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PATCH",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "image",
+							"type": "file",
+							"src": "/Users/denisfeier/Desktop/puzzle-schmidt-1000-pieces-random-galaxy.webp"
+						},
+						{
+							"key": "title",
+							"value": "Visul American 2.0",
+							"type": "text"
+						},
+						{
+							"key": "locationLat",
+							"value": "0",
+							"type": "text"
+						},
+						{
+							"key": "locationLong",
+							"value": "45.54",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:3000/api/post/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"post",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete post",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwidXNlcm5hbWUiOiJQTE0iLCJlbWFpbCI6InRlc3QxQG1haWxpbmF0b3IuY29tIiwiaWF0IjoxNzQ1NzYwNTE0LCJleHAiOjE3NDU4MDM3MTR9.qDh_OVeXvcYN8DDqB0jLDwxaNQaR1TaVBlTWwKdlcS4",
+							"type": "string"
+						}
+					]
+				},
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/api/post/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"post",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get users posts",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwidXNlcm5hbWUiOiJQTE0iLCJlbWFpbCI6InRlc3QxQG1haWxpbmF0b3IuY29tIiwiaWF0IjoxNzQ1NzYwNTE0LCJleHAiOjE3NDU4MDM3MTR9.qDh_OVeXvcYN8DDqB0jLDwxaNQaR1TaVBlTWwKdlcS4",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/api/post/1?page=1&limit=3&order=asc&order=desc",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"post",
+						"1"
+					],
+					"query": [
+						{
+							"key": "page",
+							"value": "1"
+						},
+						{
+							"key": "limit",
+							"value": "3"
+						},
+						{
+							"key": "order",
+							"value": "asc"
+						},
+						{
+							"key": "order",
+							"value": "desc"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
