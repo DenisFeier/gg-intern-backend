@@ -6,8 +6,8 @@ Memory Picker is a Node.js and TypeScript-based boilerplate project designed to 
 
 1. **Clone the Repository**:
    ```bash
-   git clone <repository-url>
-   cd node-ts-boilerplate-main
+   git clone https://github.com/DenisFeier/gg-intern-backend
+   cd gg-intern-backend
    ```
 
 2. **Install Dependencies**:
