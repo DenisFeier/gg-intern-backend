@@ -86,7 +86,10 @@ router.get('/me', authorizeUser, async (req, res) => {
   try {
     const user = (req as AuthenticatedRequest).user;
     const existingUser = await findUserByEmail(user.email);
-    res.json({ user, ...existingUser });
+    if (existingUser && 'password' in existingUser) {
+      delete existingUser.password;
+    }
+    res.json(existingUser);
   } catch (err) {
     res.status(500).json({ message: 'Internal server error' });
   }
